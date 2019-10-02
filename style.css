@@ -102,3 +102,67 @@ button.action:hover {
 button.toolbar-close:hover {
   font-weight: bold;
 }
+
+.show-bar-top {
+  animation: slidedown-top 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes slidedown-top {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.hide-bar-top {
+  animation: slideup-top 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes slideup-top {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+.show-bar-bottom {
+  animation: slidedown-bottom 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes slidedown-bottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.hide-bar-bottom {
+  animation: slideup-bottom 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes slideup-bottom {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}

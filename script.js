@@ -1,5 +1,4 @@
 //Create template HTML in JS
-
 const wrapper = document.createElement('div');
 wrapper.classList.add('wrapper')
 document.body.appendChild(wrapper);
@@ -31,31 +30,36 @@ circleDiv.textContent = 'Show Bar';
 circleDiv.classList.add('circle');
 wrapper.appendChild(circleDiv);
 
+
 //variables
+const BarOnTop = false;
 
-const BarOnTop = true;
 
-
-//functons
-
+//functions
 showToolbar = () => {
+  toolbarAll.className = 'toolbar-all'
   if (BarOnTop) {
     toolbarAll.classList.add('top');
+    toolbarAll.classList.add('show-bar-top');
   } else {
     toolbarAll.classList.add('bottom');
+    toolbarAll.classList.add('show-bar-bottom');
   }
-  return
 }
 
 hideToolbar = () => {
   if (toolbarAll.classList.contains('top')) {
-    toolbarAll.classList.remove('top')
+    toolbarAll.classList.add('hide-bar-top');
+    toolbarAll.classList.remove('show-bar-top');
+    setTimeout(() => toolbarAll.classList.remove('top'), 400);
   } else {
-    toolbarAll.classList.remove('bottom')
+    toolbarAll.classList.add('hide-bar-bottom');
+    toolbarAll.classList.remove('show-bar-bottom');
+    setTimeout(() => toolbarAll.classList.remove('bottom'), 400);
   };
 }
 
-//events
 
+//events
 circleDiv.addEventListener('click', showToolbar)
 toolbarCloseBtn.addEventListener('click', hideToolbar)
