@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+button {
+  font-size: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+  position: relative;
+  height: 400px;
+  width: 80%;
+  margin: 50px auto;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #eee;
+  border: 4px solid black;
+
+}
+
+.circle {
+  width: 70px;
+  height: 70px;
+  border: 3px solid #444;
+  border-radius: 50%;
+  color: #222;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .4s;
+}
+
+.circle:hover {
+  cursor: pointer;
+  box-shadow: 0 0 2px black;
+}
+
+.toolbar-all {
+  position: absolute;
+  left: 0;
+  /* top: 0; */
+  width: 100%;
+
+  display: none;
+  flex-basis: 10%;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #363D4D;
+  color: white;
+  padding: 10px;
+  transition: 1s;
+}
+
+.top {
+  display: flex;
+  top: 0;
+}
+
+.bottom {
+  display: flex;
+  bottom: 0;
+}
+
+.toolbar-all button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: none;
+  background-color: transparent;
+  color: white;
+}
+
+.toolbar-all button:hover {
+  cursor: pointer;
+}
+
+button.action {
+  background-color: #FEBB26;
+  border-radius: 2px;
+  transition: .4s;
+}
+
+button.action:hover {
+  transform: translateX(10%)
+}
+
+.toolbar-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 100%;
+}
+
+button.toolbar-close:hover {
+  font-weight: bold;
+}
