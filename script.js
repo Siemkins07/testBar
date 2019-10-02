@@ -74,15 +74,17 @@ getWidgets = () => {
   loadingTxt.style.marginTop = "10px";
   spinnerDiv.appendChild(loadingTxt);
   const backTxt = document.createElement('p');
+  backTxt.classList.add('back');
   backTxt.textContent = 'Go Back';
-  backTxt.style.position = 'absolute';
-  backTxt.style.color = 'white';
-  backTxt.style.textShadow = '1px 1px black';
   setTimeout(() => spinnerDiv.appendChild(backTxt), 3000);
+  backTxt.addEventListener('click', function () {
+    spinnerDiv.classList.remove('visible');
+    spinnerDiv.removeChild(loadingTxt);
+    backTxt.textContent = '';
+  })
 }
 
 //events
-circleDiv.addEventListener('click', showToolbar)
-toolbarCloseBtn.addEventListener('click', hideToolbar)
-actionBtn.addEventListener('click', getWidgets)
-backTxt.addEventListener('click', () => console.log('do poprawy'));
+circleDiv.addEventListener('click', showToolbar);
+toolbarCloseBtn.addEventListener('click', hideToolbar);
+actionBtn.addEventListener('click', getWidgets);
