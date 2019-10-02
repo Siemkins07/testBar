@@ -25,6 +25,14 @@ toolbarCloseBtn.textContent = 'X';
 toolbarCloseBtn.classList.add('toolbar-close');
 toolbarAll.appendChild(toolbarCloseBtn);
 
+const spinnerDiv = document.createElement('div');
+spinnerDiv.classList.add('spinner');
+wrapper.appendChild(spinnerDiv);
+
+const spinnerContent = document.createElement('div');
+spinnerContent.classList.add('spinner-content');
+spinnerDiv.appendChild(spinnerContent);
+
 const circleDiv = document.createElement('div');
 circleDiv.textContent = 'Show Bar';
 circleDiv.classList.add('circle');
@@ -32,7 +40,7 @@ wrapper.appendChild(circleDiv);
 
 
 //variables
-const BarOnTop = false;
+const BarOnTop = true;
 
 
 //functions
@@ -59,7 +67,22 @@ hideToolbar = () => {
   };
 }
 
+getWidgets = () => {
+  spinnerDiv.classList.add('visible');
+  const loadingTxt = document.createElement('p');
+  loadingTxt.textContent = 'Please wait. Loading...';
+  loadingTxt.style.marginTop = "10px";
+  spinnerDiv.appendChild(loadingTxt);
+  const backTxt = document.createElement('p');
+  backTxt.textContent = 'Go Back';
+  backTxt.style.position = 'absolute';
+  backTxt.style.color = 'white';
+  backTxt.style.textShadow = '1px 1px black';
+  setTimeout(() => spinnerDiv.appendChild(backTxt), 3000);
+}
 
 //events
 circleDiv.addEventListener('click', showToolbar)
 toolbarCloseBtn.addEventListener('click', hideToolbar)
+actionBtn.addEventListener('click', getWidgets)
+backTxt.addEventListener('click', () => console.log('do poprawy'));
